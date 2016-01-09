@@ -10,9 +10,9 @@ Config = {
     maintainers: ['Blade', 'V.'],
 
     // Repo to load plugins from.
-    repourl: "http://viperspit.github.io/Scripts/",
+    repourl: "https://raw.githubusercontent.com/VipersPit/Scripts/",
     // Repo to load data (announcement/description + tiers) from.
-    dataurl: "http://viperspit.github.io/Server-Shit/",
+    dataurl: "https://raw.githubusercontent.com/VipersPit/Server-Shit/",
     emotesurl: 'http://viperspit.github.io/Emotes/emotes.json',
 
     // Plugin directory.
