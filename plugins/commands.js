@@ -696,7 +696,7 @@
         Utils.watch.notify(Utils.nameIp(src) + " " + RTD.rollString(effect));
     });
 
-    addCommand(0, "emotetoggle", function (src, commandData, chan) {
+    /*addCommand(0, "emotetoggle", function (src, commandData, chan) {
         var toggled = Emotes.enabledFor(src),
             word = (toggled ? "off" : "on");
 
@@ -708,7 +708,7 @@
 
         Reg.save("Emotetoggles", Emotetoggles);
         bot.sendMessage(src, "Emotes are now toggled " + word + ".", chan);
-    });
+    });*/
 
     /** MOD COMMANDS */
     addListCommand(1, "modcommands", "Mod");
@@ -1172,7 +1172,7 @@
 
     var autoMessages = {
         logwarn: "@%1: If you have a log over (or at) 5 lines, please use http://pastebin.com to show the log. Otherwise, you might be kicked by the Flood Bot, or muted by a Moderator/or you may be temporarily banned. This is your last warning.",
-        tellemotes: "Hey, %1, the thing you are confused about is an emote. An emote is a small image that conveys an emotion. To see a list of emotes, type /emotes. After that, all you have to do is type the emote that you want to use. If it doesn't work at first, you may have to type /emotetoggle. Good day!",
+        tellemotes: "Hey, %1, the thing you are confused about is an emote. An emote is a small image that conveys an emotion. To see a list of emotes, type /emotes. After that, all you have to do is type the emote that you want to use. Good day!",
         tellandroid: "Hello, %1, I can tell you're in a need of help on how to use the android app for this game, so I shall try to help. Go to this link [ http://pokemon-online.eu/threads/pokemon-online-android-guide.22444 ] by clicking/tapping and this shall direct you to a thread on the Pokemon Online forums that can help you with your problem. This thread is filled with screenshots and short descriptions on how to do some tasks on the app. Please be sure to check it out. Also, if you're still unable to figure it out, I say for you to try out this game on a computer because it's way more easier to use. I hope this helped!"
     };
 

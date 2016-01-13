@@ -169,8 +169,8 @@
             ["selfkick", "Kicks all the ghosts on your ip."],
             ["vote", "To vote on a poll option.", ["option"]],
             ["players", "Tells you how many players there are online on the given [os] (windows, mac, linux, android, webclient). If not specified, tells you how many players there are online regardless of OS.", ["os"]],
-			["emotes", "To view a list of emotes."],
-            ["emotetoggle", "To toggle emotes on or off for you."]
+			["emotes", "To view a list of emotes."]
+            //["emotetoggle", "To toggle emotes on or off for you."]
         ]).finish();
 
         /** LEAGUE MANAGER **/
