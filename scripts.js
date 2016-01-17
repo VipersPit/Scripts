@@ -7,7 +7,7 @@ Config = {
     // Configuration for the script.
     servername: "Viper's Pit",
 
-    maintainers: ['Blade', 'V.'],
+    maintainers: ['Blade', 'V.', 'Max'],
 
     // Repo to load plugins from.
     repourl: "https://raw.githubusercontent.com/VipersPit/Scripts/master/",
