@@ -328,6 +328,15 @@
 
         broadcast("<font color=" + Utils.nameColor(src) + "><timestamp/><b><i>*** " + Utils.escapeHtml(sys.name(src)) + " " + Utils.escapeHtml(commandData) + " ***</font></b></i>", chan);
     });
+    
+    addCommand(0, "icon", function(src, commandData, chan) {
+    	if(!commandData || parseInt(commmandData) == NaN) {
+    	   return bot.sendMessage(src, "You must provide a pokemon number.", chan);	
+    	}	
+    	
+    	SESSION.users(src).icon = commandData;
+    	broadcast("<img src=pokemon:" + commandData +">", chan);
+    });
 
     addListCommand(0, "rules", "Rules");
     addCommand(0, "emotes", function (src, commandData, chan) {
