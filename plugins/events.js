@@ -566,7 +566,7 @@
                 }
 
                 sendStr += "<font color=" + Utils.nameColor(player) + "><timestamp/>";
-                sendStr += icon;
+                if(icon != undefined) sendStr += icon;
                 if (visibleAuth) {
                     sendStr += "+<i>";
                 }
