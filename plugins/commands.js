@@ -330,7 +330,7 @@
     });
     
     addCommand(0, "icon", function(src, commandData, chan) {
-    	if(!commandData || parseInt(commmandData) == NaN) {
+    	if(!commandData || parseInt(commandData) == NaN) {
     	   return bot.sendMessage(src, "You must provide a pokemon number.", chan);	
     	}	
     	
