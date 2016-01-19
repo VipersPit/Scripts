@@ -405,7 +405,8 @@
             var poUser = SESSION.users(src),
                 poChan = SESSION.channels(chan),
                 isMuted = poUser.muted,
-                myAuth = Utils.getAuth(src);
+                myAuth = Utils.getAuth(src),
+                icon = SESSION.users(src).icon;
 
             message = Utils.stripBadCharacters(message);
 
@@ -565,6 +566,7 @@
                 }
 
                 sendStr += "<font color=" + Utils.nameColor(player) + "><timestamp/>";
+                sendStr += icon;
                 if (visibleAuth) {
                     sendStr += "+<i>";
                 }
