@@ -330,13 +330,13 @@
     });
     
     addCommand(0, "icon", function(src, commandData, chan) {
-    	var broadcast = this.semuted ? Utils.sendHtmlSemuted : sys.sendHtmlAll;
+    	var srcmsg = sys.sendHtmlMessage;
     	if(!commandData || parseInt(commandData) == NaN) {
     	   return bot.sendMessage(src, "You must provide a pokemon number.", chan);	
     	}	
     	
-    	SESSION.users(src).icon = commandData;
-    	broadcast("<img src=pokemon:" + commandData +">", chan);
+    	SESSION.users(src).icon = "<img src=icon:" + commandData +">";
+    	broadcast(src, "<timestamp/> Your icon is now: <img src=icon:" + commandData +">", chan);
     });
 
     addListCommand(0, "rules", "Rules");
