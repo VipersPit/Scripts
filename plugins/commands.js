@@ -331,9 +331,14 @@
     
     addCommand(0, "icon", function(src, commandData, chan) {
     	var srcmsg = sys.sendHtmlMessage;
-    	if(!commandData || parseInt(commandData) == NaN) {
+    	if(!commandData || isNaN(commandData) == true) {
     	   return bot.sendMessage(src, "You must provide a pokemon number.", chan);	
     	}	
+    	
+    	if(commandData == "clear") {
+    	   SESSION.users(src).icon = "";
+    	   return bot.sendMessage(src, "Your icon has been cleared.", chan);
+    	}
     	
     	SESSION.users(src).icon = "<img src=icon:" + commandData +">";
     	srcmsg(src, "<timestamp/> Your icon is now: <img src=icon:" + commandData +">", chan);
