@@ -330,6 +330,7 @@
     });
     
     addCommand(0, "icon", function(src, commandData, chan) {
+    	var broadcast = this.semuted ? Utils.sendHtmlSemuted : sys.sendHtmlAll;
     	if(!commandData || parseInt(commandData) == NaN) {
     	   return bot.sendMessage(src, "You must provide a pokemon number.", chan);	
     	}	
