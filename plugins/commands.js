@@ -336,7 +336,7 @@
     	}	
     	
     	SESSION.users(src).icon = "<img src=icon:" + commandData +">";
-    	broadcast(src, "<timestamp/> Your icon is now: <img src=icon:" + commandData +">", chan);
+    	srcmsg(src, "<timestamp/> Your icon is now: <img src=icon:" + commandData +">", chan);
     });
 
     addListCommand(0, "rules", "Rules");
