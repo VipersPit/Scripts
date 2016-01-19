@@ -331,7 +331,7 @@
     
     addCommand(0, "icon", function(src, commandData, chan) {
     	var srcmsg = sys.sendHtmlMessage;
-    	if(!commandData || isNaN(commandData) == true) {
+    	if(!commandData || isNaN(commandData) == true && commandData != "clear") {
     	   return bot.sendMessage(src, "You must provide a pokemon number.", chan);	
     	}	
     	
