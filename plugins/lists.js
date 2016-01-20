@@ -187,6 +187,7 @@
             ["cure", "To cure someone.", ["player"]],
             ["kill", "To have someone killed in a ridiculous way.", ["player"]],
             ["me", "To post a message with *** around it.", ["message"]],
+            ["icon", "Change your icon to <b>number</b>. Otherwise, type 'clear' to clear it.", ["number"]],
             ["spin", "To play roulette if a game is going on."],
             ["attack", "To use a Pokémon attack on someone.", ["player"]],
             ["rtd", "Roll the dice! You will receive a special effect."],
