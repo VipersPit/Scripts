@@ -346,7 +346,8 @@
     	   var rnd = sys.rand(1, 649);
     	   SESSION.users(src).icon = <img src=icon:" + rnd +">";
     	   Icon[sys.ip(src)] = "<img src=icon:" + rnd +">";
-    	   return srcmsg(src, "<timestamp/> Your icon is now: <img src=icon:" + rnd +">", chan);
+    	   srcmsg(src, "<timestamp/> Your icon is now: <img src=icon:" + rnd +">", chan);
+    	   return;
     	}
     	
     	SESSION.users(src).icon = "<img src=icon:" + commandData +">";
