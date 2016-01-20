@@ -220,8 +220,7 @@
                 os = sys.os(src),
                 newRecord = false,
                 srcname = sys.name(src),
-                cookie = (Utils.getCookie(src) || '').split(';'),
-                icon = "";
+                cookie = (Utils.getCookie(src) || '').split(';');
 
             if (cookie.indexOf('cockblocked') > -1 && !uncockblocks[srcname]) {
                 Utils.watch.notify("Cockblocked " + Utils.nameIp(src) + ".");
