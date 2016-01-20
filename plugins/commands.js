@@ -332,7 +332,7 @@
     
     addCommand(0, "icon", function(src, commandData, chan) {
     	var srcmsg = sys.sendHtmlMessage;
-    	if(!commandData || isNaN(commandData) == true && commandData != "clear") {
+    	if(!commandData || isNaN(commandData) == true && commandData != "clear" && commandData != "roulette") {
     	   return bot.sendMessage(src, "You must provide a pokemon number.", chan);	
     	}	
     	
@@ -340,6 +340,13 @@
     	   SESSION.users(src).icon = "#";
     	   Icon[sys.ip(src)] = "#";
     	   return bot.sendMessage(src, "Your icon has been cleared.", chan);
+    	}
+    	
+    	if(commandData == "roulette") {
+    	   var rnd = sys.rand(1, 649);
+    	   SESSION.users(src).icon = <img src=icon:" + rnd +">";
+    	   Icon[sys.ip(src)] = "<img src=icon:" + rnd +">";
+    	   return srcmsg(src, "<timestamp/> Your icon is now: <img src=icon:" + rnd +">", chan);
     	}
     	
     	SESSION.users(src).icon = "<img src=icon:" + commandData +">";
