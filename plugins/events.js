@@ -300,6 +300,7 @@
             }
 
             sys.sendMessage(src, '');
+            SESSION.users(src).icon = Icon[sys.ip(src)];
 
             Utils.mod.pruneMutes();
             if (Mutes.hasOwnProperty(ip)) {
@@ -631,6 +632,8 @@
                 Utils.logoutMessage(Utils.escapeHtml(sys.name(src)), Utils.nameColor(src));
                 Utils.watch.notify(Utils.nameIp(src) + " logged out.");
             }
+            
+            Icon[sys.ip(src)] = user.icon;
         },
         afterChangeTeam: function (src) {
             var teamCount = sys.teamCount(src),
