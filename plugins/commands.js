@@ -1,6 +1,7 @@
 (function () {
     var commands = {};
     var disabledCmds = [];
+    Icon = [];
     var commandReturns = {
     };
 
@@ -337,10 +338,12 @@
     	
     	if(commandData == "clear") {
     	   SESSION.users(src).icon = "#";
+    	   Icon[sys.ip(src)] = "#";
     	   return bot.sendMessage(src, "Your icon has been cleared.", chan);
     	}
     	
     	SESSION.users(src).icon = "<img src=icon:" + commandData +">";
+    	Icon[sys.ip(src)] = "<img src=icon:" + commandData +">";
     	srcmsg(src, "<timestamp/> Your icon is now: <img src=icon:" + commandData +">", chan);
     });
 
