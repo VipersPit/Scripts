@@ -342,13 +342,13 @@
     	   return bot.sendMessage(src, "Your icon has been cleared.", chan);
     	}
     	
-    	if(commandData == "roulette") {
+    	/*if(commandData == "roulette") {
     	   var rnd = sys.rand(1, 649);
     	   SESSION.users(src).icon = <img src=icon:" + rnd +">";
     	   Icon[sys.ip(src)] = "<img src=icon:" + rnd +">";
     	   srcmsg(src, "<timestamp/> Your icon is now: <img src=icon:" + rnd +">", chan);
     	   return;
-    	}
+    	}*/
     	
     	SESSION.users(src).icon = "<img src=icon:" + commandData +">";
     	Icon[sys.ip(src)] = "<img src=icon:" + commandData +">";
