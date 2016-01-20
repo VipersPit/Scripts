@@ -336,7 +336,7 @@
     	}	
     	
     	if(commandData == "clear") {
-    	   SESSION.users(src).icon = "";
+    	   SESSION.users(src).icon = "#";
     	   return bot.sendMessage(src, "Your icon has been cleared.", chan);
     	}
     	
