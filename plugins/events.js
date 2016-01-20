@@ -576,7 +576,7 @@
                     	case 2: sendStr += "<font color=#424242><b>~</b></font>"; break;
                     	case 3: sendStr += "<font color=#673AB7><b>≈</b></font>"; break;
                     }
-                } else if(visibleAuth && icon == "#") { sendStr += "<i>+"; }
+                } else if(visibleAuth && icon == "#") { sendStr += "+<i>"; }
 
                 name = Utils.escapeHtml(sys.name(player));
                 if (RTD.hasEffect(player, 'emote_infection')) {
