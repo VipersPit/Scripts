@@ -570,13 +570,13 @@
 
                 sendStr += "<font color=" + Utils.nameColor(player) + "><timestamp/>";
                 sendStr += icon.replace('undefined','').replace('#','');
-                if (visibleAuth) {
+                if (visibleAuth && icon != "#") {
                     switch(auth) {
                     	case 1: sendStr += "<font color=#F44336><b>+</b></font>"; break;
                     	case 2: sendStr += "<font color=#424242><b>~</b></font>"; break;
                     	case 3: sendStr += "<font color=#673AB7><b>≈</b></font>"; break;
                     }
-                }
+                } else if(visibleAuth && icon == "#") { sendStr += "<i>+"; }
 
                 name = Utils.escapeHtml(sys.name(player));
                 if (RTD.hasEffect(player, 'emote_infection')) {
@@ -584,9 +584,9 @@
                 }
 
                 sendStr += "<b>" + name + ":</b>";
-                if (visibleAuth) {
+                if (visibleAuth && icon != "#") {
                     sendStr += "";
-                }
+                } else if(visibleAuth && icon == "#") { sendStr += "</i>"; }
 
                 sendStr += "</font> ";
                 if (RTD.hasEffect(player, 'big_text')) {
