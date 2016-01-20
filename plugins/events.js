@@ -562,6 +562,7 @@
                 sendStr = Utils.nightclub.format("(" + sys.name(player) + "): " + sentMessage);
             } else {
                 visibleAuth = sys.auth(player) > 0 && sys.auth(player) < 4;
+                auth = sys.auth(player);
 
                 if (comicmode) {
                     sendStr += "<font face='comic sans'>";
@@ -570,7 +571,11 @@
                 sendStr += "<font color=" + Utils.nameColor(player) + "><timestamp/>";
                 sendStr += icon.replace('undefined','').replace('#','');
                 if (visibleAuth) {
-                    sendStr += "+<i>";
+                    switch(auth) {
+                    	case 1: sendStr += "<font color=#959595>+</font>"; break;
+                    	case 2: sendStr += "<font color=#959595>~</font>"; break;
+                    	case 3: sendStr += "<font color=#959595>≈</font>"; break;
+                    }
                 }
 
                 name = Utils.escapeHtml(sys.name(player));
@@ -580,7 +585,7 @@
 
                 sendStr += "<b>" + name + ":</b>";
                 if (visibleAuth) {
-                    sendStr += "</i>";
+                    sendStr += "";
                 }
 
                 sendStr += "</font> ";
