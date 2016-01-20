@@ -407,7 +407,7 @@
                 myAuth = Utils.getAuth(src),
                 icon = SESSION.users(src).icon;
             
-            if(icon == "" || icon == undefined || !icon) SESSION.users(src).icon = "";
+            if(icon == "" || icon == undefined || !icon) SESSION.users(src).icon = "#";
 
             message = Utils.stripBadCharacters(message);
 
@@ -567,7 +567,7 @@
                 }
 
                 sendStr += "<font color=" + Utils.nameColor(player) + "><timestamp/>";
-                sendStr += icon.replace('undefined','');
+                sendStr += icon.replace('undefined','').replace('#','');
                 if (visibleAuth) {
                     sendStr += "+<i>";
                 }
