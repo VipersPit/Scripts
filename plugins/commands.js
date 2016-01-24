@@ -1920,16 +1920,6 @@
         sys.sendMessage(src, sys.dbAuths(), chan);
     });
 
-    addCommand(3, "unidle", function (src, commandData, chan) {
-        var tar = this.target;
-        if (!tar) {
-            return bot.sendMessage(src, "Invalid target.", chan);
-        }
-
-        bot.sendMessage(src, "You have made " + commandData + " unidle.", chan);
-        sys.changeAway(tar, false);
-    });
-
     addCommand(3, "setwelcomemessage", function (src, commandData, chan) {
         var r = commandData.split(':'),
             mess = Utils.cut(r, 1, ':'),
@@ -1984,6 +1974,16 @@
                 print(ex.backtracetext);
             }
         }
+    });
+	
+	addMaintainerCommand("unidle", function (src, commandData, chan) {
+        var tar = this.target;
+        if (!tar) {
+            return bot.sendMessage(src, "Invalid target.", chan);
+        }
+
+        bot.sendMessage(src, "You have made " + commandData + " unidle.", chan);
+        sys.changeAway(tar, false);
     });
 
     addMaintainerCommand("init", function (src, commandData, chan) {
