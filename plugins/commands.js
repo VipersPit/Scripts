@@ -2141,7 +2141,7 @@
         });
     });
 
-    addMaintainerCommand(["testann", "updateann"], function (src, commandData) {
+    /*addMaintainerCommand(["testann", "updateann"], function (src, commandData) {
         var baseurl = Config.dataurl,
             command = this.command;
 
@@ -2207,7 +2207,7 @@
             //bot.sendMessage(src, "Old announcement stored in old_announcement.html", chan);
             sys.changeAnnouncement(resp);
         });
-    });
+    });*/
 
     addMaintainerCommand("syncserver", function (src, commandData, chan) {
         commands.updateann.callback.call(this, src, commandData, chan);
@@ -2263,24 +2263,6 @@
                 Utils.watch.notify("Backtrace: " + Utils.escapeHtml(error.backtrace.join("<br>")));
             }
         }
-    });
-	
-	addMaintainerCommand("clearpass", function (src, commandData, chan) {
-        var ip = sys.dbIp(commandData);
-        if (!ip) {
-            bot.sendMessage(src, "Target doesn't exist!", chan);
-            return;
-        }
-        if (!Utils.mayTarget(src, commandData)) {
-            bot.sendMessage(src, "You are unable to clear this person's password.", chan);
-            return;
-        }
-        if (!sys.dbRegistered(commandData)) {
-            bot.sendMessage(src, "This person isn't registered.", chan);
-            return;
-        }
-        sys.clearPass(commandData);
-        bot.sendMessage(src, commandData + "'s password has been cleared!", chan);
     });
 	
 	addMaintainerCommand("clearpass", function (src, commandData, chan) {
