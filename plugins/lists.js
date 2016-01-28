@@ -363,10 +363,10 @@
             ["regremove", "Removes the given [key] from the reg.", ["key"]],
             ["cdunregister", "Unregisters the given [channel] from the ChannelManager.", ["channel"]],
             ["dump", "Dumps information about the given type. Available types are: * (selects everything, default), memory, profile, session, reg, channeldata.", ["type1", "type2"]],
-			["clearpass", "To clear [player]'s password.", ["player"]],
-			["changeauth", "Changes [player]'s auth to [level].", ["player", "level"]],
-			["unidle", "Unidles a [player].", ["player"]]            
-			/*["emoteusage", "Shows emote usage statistics. [mode] can optionally be -0 (doesn't show emotes with 0 usage), 0! (only emotes with 0 usage), or ~[n] (limit to [n] emotes)", ["mode"]],
+	    ["clearpass", "To clear [player]'s password.", ["player"]],
+	    ["changeauth", "Changes [player]'s auth to [level].", ["player", "level"]],
+	    ["unidle", "Unidles a [player].", ["player"]]            
+	    /*["emoteusage", "Shows emote usage statistics. [mode] can optionally be -0 (doesn't show emotes with 0 usage), 0! (only emotes with 0 usage), or ~[n] (limit to [n] emotes)", ["mode"]],
             ["resetemoteusage", "Resets emote usage statistics."]*/
         ]).finish();
 
