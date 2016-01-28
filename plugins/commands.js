@@ -472,7 +472,7 @@
             return function (name) {
                 var id = sys.id(name);
                 if (id) {
-                    sys.sendHtmlMessage(src, '<img src="Themes/Classic/Client/' + type + 'Available.png"> <b><font size="2">' + Utils.toCorrectCase(name) + '</font></b>', chan);
+                    sys.sendHtmlMessage(src, '<img src="Themes/Classic/Client/' + type + 'Available.png"> <b><font size="2" color='+ Utils.nameColor(id) +'>' + Utils.toCorrectCase(name) + '</font></b>', chan);
                 } else {
                     sys.sendHtmlMessage(src, '<img src="Themes/Classic/Client/' + type + 'Away.png"> <b><font size="2">' + name + '</font></b>', chan);
                 }
