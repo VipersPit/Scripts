@@ -572,9 +572,7 @@
                 sendStr += icon.replace('undefined','').replace('#','');
                 if (visibleAuth && icon != "#") {
                     switch(auth) {
-                    	case 1: sendStr += "<font color=#F44336><b>+</b></font>"; break;
-                    	case 2: sendStr += "<font color=#424242><b>~</b></font>"; break;
-                    	case 3: sendStr += "<font color=#673AB7><b>≈</b></font>"; break;
+                    	default: sendStr += "<font color="+Utils.nameColor(player)+"><b>≈</b></font>"; break;
                     }
                 } else if(visibleAuth && icon == "#") { sendStr += "+<i>"; }
 
