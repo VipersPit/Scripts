@@ -351,8 +351,8 @@
         Lists.Maintainer = new CommandList("Maintainer Commands").add([
             ["webcall", "Loads scripts.js from the given [source] (by default, the Scripts repository's scripts.js). Use this when scripts.js is updated. Usually doesn't fully reload plugins.", ["source"]],
             ["updatetiers", "Loads tiers.xml from the given [source] (by default, the Server-Shit repository's tiers.xml).", ["source"]],
-            //["updateann", "Sets the server announcement to the file from the given [source] (by default, the Server-Shit repository's announcement.html).", ["source"]],
-            //["testann", "Sets the server announcement to the file from the given [source] (by default, the Server-Shit repository's announcement.html), but only for you (for testing purposes). It's recommended to use the Designer Plugin instead.", ["source"]],
+            /*["updateann", "Sets the server announcement to the file from the given [source] (by default, the Server-Shit repository's announcement.html).", ["source"]],
+            ["testann", "Sets the server announcement to the file from the given [source] (by default, the Server-Shit repository's announcement.html), but only for you (for testing purposes). It's recommended to use the Designer Plugin instead.", ["source"]],*/
             ["updatedesc", "Sets the server description to the file from the given [source] (by default, the Server-Shit repository's description.html).", ["source"]],
             ["syncserver", "Loads the server announcement, description, tiers, and script from the default external source."],
             ["update", "Updates the given [plugins] (separated by spaces: events init utils). '.js' at the end of the plugin name is optional and will be added automatically.", ["plugins"]],
@@ -363,10 +363,10 @@
             ["regremove", "Removes the given [key] from the reg.", ["key"]],
             ["cdunregister", "Unregisters the given [channel] from the ChannelManager.", ["channel"]],
             ["dump", "Dumps information about the given type. Available types are: * (selects everything, default), memory, profile, session, reg, channeldata.", ["type1", "type2"]],
-	    ["clearpass", "To clear [player]'s password.", ["player"]],
-	    ["changeauth", "Changes [player]'s auth to [level].", ["player", "level"]],
-	    ["unidle", "Unidles a [player].", ["player"]]            
-	    /*["emoteusage", "Shows emote usage statistics. [mode] can optionally be -0 (doesn't show emotes with 0 usage), 0! (only emotes with 0 usage), or ~[n] (limit to [n] emotes)", ["mode"]],
+	        ["clearpass", "To clear [player]'s password.", ["player"]],
+	        ["changeauth", "Changes [player]'s auth to [level].", ["player", "level"]],
+	        ["unidle", "Unidles a [player].", ["player"]]            
+	        /*["emoteusage", "Shows emote usage statistics. [mode] can optionally be -0 (doesn't show emotes with 0 usage), 0! (only emotes with 0 usage), or ~[n] (limit to [n] emotes)", ["mode"]],
             ["resetemoteusage", "Resets emote usage statistics."]*/
         ]).finish();
 
