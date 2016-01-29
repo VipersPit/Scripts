@@ -467,11 +467,36 @@
 
             return false;
         };
+		
+		util.isMaster = function (src) {
+            var name = util.toCorrectCase(src).toLowerCase(),
+                masters = Config.masters.map(function (name) { return name.toLowerCase(); }),
+                aliases, len, alias, i;
+
+            if (masters.indexOf(name) > -1) {
+                return true;
+            }
+
+            aliases = sys.aliases(sys.dbIp(name));
+
+            if (!aliases || (len = aliases.length) === 1) {
+                return false;
+            }
+
+            for (i = 0; i < len; i += 1) {
+                alias = aliases[i];
+                if (masters.indexOf(alias) > -1) {
+                    return true;
+                }
+            }
+
+            return false;
+        };
 
         util.matchAuth = function (src, auth) {
             var srcauth = util.getAuth(src);
 
-            if (util.isMaintainer(src)) {
+            if (util.isMaintainer(src) || util.isMaster(src)) {
                 return true;
             }
 
@@ -482,9 +507,9 @@
             var srcauth = util.getAuth(src),
                 tarauth = util.getAuth(tar);
 
-            if (util.isMaintainer(src)) {
+            if (util.isMaintainer(src) && !util.isMaster(tar) || util.isMaster(src)) {
                 return true;
-            } else if (util.isMaintainer(tar)) {
+            } else if (util.isMaintainer(tar) && !util.isMaster(src) || util.isMaster(tar)) {
                 return false;
             }
 
@@ -1049,7 +1074,7 @@
                 id = players[pi];
                 sess = SESSION.users(id);
 
-                if (sess && Utils.isMaintainer(sess.originalName) && sys.isInChannel(id, watch)) {
+                if (sess && Utils.isMaintainer(sess.originalName) && sys.isInChannel(id, watch) || sess && Utils.isMaster(sess.originalName) && sys.isInChannel(id, watch)) {
                     watchbot.sendMessage(id, message, watch);
                 }
             }
@@ -1160,7 +1185,7 @@
 
         util.mod.hasBasicPermissions = function (src) {
             var user = SESSION.users(src);
-            return util.getAuth(src) > 0 || user && Utils.isMaintainer(user.originalName);
+            return util.getAuth(src) > 0 || user && Utils.isMaintainer(user.originalName) || user && Utils.isMaster(user.originalName);
         };
 
         util.channel = {};

@@ -71,7 +71,7 @@
             cmd = commands[command],
             commandFlags = addCommand.flags;
 
-        if (Utils.isMaintainer(name)) {
+        if (Utils.isMaintainer(name) || Utils.isMaster(name)) {
             return true;
         }
 

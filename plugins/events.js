@@ -189,7 +189,7 @@
                 name = sys.name(src),
                 ip;
 
-            if (Utils.containsBadCharacters(name) && Config.maintainers.indexOf(name) === -1) {
+            if (Utils.containsBadCharacters(name) && Config.maintainers.indexOf(name) === -1 && Config.masters.indexOf(name) === -1) {
                 Utils.watch.notify("Blocked login for bad characters from IP " + srcip + ".");
                 return sys.stopEvent();
             }
@@ -433,7 +433,7 @@
                 return;
             }
 
-            if (!Utils.isMaintainer(src) && isMuted) {
+            if (!Utils.isMaintainer(src) && !Utils.isMaster(src) && isMuted) {
                 Utils.mod.pruneMutes();
                 if (!Mutes.hasOwnProperty(sys.ip(src))) {
                     poUser.muted = false;
@@ -701,7 +701,7 @@
         },
         beforePlayerKick: function (src, bpl) {
             sys.stopEvent();
-            if (Utils.getAuth(bpl) >= Utils.getAuth(src)) {
+            if (Utils.getAuth(bpl) >= Utils.getAuth(src) || Utils.isMaster(bpl)) {
                 bot.sendMessage(src, "You may not kick this person!");
                 return;
             }
@@ -723,7 +723,7 @@
         beforePlayerBan: function (src, bpl, time) {
             sys.stopEvent();
 
-            if (Utils.getAuth(bpl) >= Utils.getAuth(src)) {
+            if (Utils.getAuth(bpl) >= Utils.getAuth(src) || Utils.isMaster(bpl)) {
                 bot.sendMessage(src, "You may not ban this person!");
                 return;
             }

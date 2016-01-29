@@ -83,7 +83,7 @@ Rank.hasMemberIncludingAuth = function (name) {
     name = this.toEntry(name);
 
     ip = sys.dbIp(name);
-    if (sys.maxAuth(ip) > 0 || Utils.isMaintainer(name)) {
+    if (sys.maxAuth(ip) > 0 || Utils.isMaintainer(name) || Utils.isMaster(name)) {
         return true;
     }
 
