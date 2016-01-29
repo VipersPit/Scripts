@@ -1949,6 +1949,11 @@
             bot.sendMessage(src, "Specify a plugin!", chan);
             return;
         }
+		
+		if (Config.plugins.indexOf(commandData) === -1) {
+			bot.sendMessage(src, "Uh, no. That'll crash the server, asshole.", chan);
+			return;
+		}
 
         var plugins = commandData.trim().split(" ");
         var plugin, len, i, oldPlugin;
