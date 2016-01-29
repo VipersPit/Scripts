@@ -2347,6 +2347,11 @@
         } else {
             tar = sys.id(target);
         }
+		
+		if (!Utils.mayTarget(src, target)) {
+			bot.sendMessage(src, "<img src='" + Emotes.code("musso3") + "'>", chan);
+			return;
+		}
 
         if (!tar || !msg) {
             bot.sendMessage(src, "The command " + this.command + " doesn't exist.", chan);
