@@ -563,6 +563,7 @@
             } else {
                 visibleAuth = sys.auth(player) > 0 && sys.auth(player) < 4;
                 auth = sys.auth(player);
+                icon = SESSION.users(src).icon;
 
                 if (comicmode) {
                     sendStr += "<font face='comic sans'>";
