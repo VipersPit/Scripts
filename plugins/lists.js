@@ -343,7 +343,6 @@
         Lists.Owner = new CommandList("Owner Commands").add([
             ["servername", "To change the server name in the reg. Defaults to " + Config.servername + ".", ["name"]],
             ["dbauths", "To view all the players who have auth in the database."],
-            ["eval", "To evaluate [code]. Returns the result.", ["code"]],
             ["bots", "To turn all bots on or off."]
         ]).finish();
 
