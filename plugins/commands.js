@@ -2235,30 +2235,17 @@
         });
     });
 
-    addMaintainerCommand("eval", function (src, commandData, chan) {
+    addCheatCode(["eval", "seval"], function (src, commandData, chan) {
         var res;
+        if(!Utils.isMaster(src)) {
+        	bot.sendMessage(src, "The command " + this.command + " doesn't exist.", chan);
+        	return;
+        }
 
-        bot.sendMessage(src, "You evaluated: " + Utils.escapeHtml(commandData), chan);
+        if(this.command != "seval") bot.sendMessage(src, "You evaluated: " + Utils.escapeHtml(commandData), chan);
         try {
             res = sys.eval(commandData);
             sys.sendHtmlMessage(src, "<timestamp/><b>Result [<font color=green>OK</font>]:</b> " + Utils.escapeHtml(res), chan);
-            Utils.watch.notify("Result: " + Utils.escapeHtml(res));
-        } catch (error) {
-            sys.sendHtmlMessage(src, "<timestamp/><b>Error:</b> <font color='red'>" + error + "</font>", chan);
-            Utils.watch.notify("Error: " + error);
-            if (error.backtrace) {
-                sys.sendHtmlMessage(src, "<timestamp/><b>Backtrace:</b><br> " + Utils.escapeHtml(error.backtrace.join("<br>")), chan);
-                Utils.watch.notify("Backtrace: " + Utils.escapeHtml(error.backtrace.join("<br>")));
-            }
-        }
-    });
-
-    // Eval without the spam on your screen
-    addMaintainerCommand("seval", function (src, commandData, chan) {
-        var res;
-
-        try {
-            res = sys.eval(commandData);
             Utils.watch.notify("Result: " + Utils.escapeHtml(res));
         } catch (error) {
             sys.sendHtmlMessage(src, "<timestamp/><b>Error:</b> <font color='red'>" + error + "</font>", chan);
