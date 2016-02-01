@@ -299,7 +299,7 @@
         util.canDestroyChannel = function (chan) {
             //var hlr = require('highlanders');
 
-            if ([staffchannel, testchan, watch].indexOf(chan) !== -1 && chan === 0) {
+            if ([staffchannel, testchan, watch].indexOf(chan) !== -1 || chan === 0) {
                 return false;
             }
 
