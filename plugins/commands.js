@@ -2245,19 +2245,15 @@
         if(this.command != "seval") bot.sendMessage(src, "You evaluated: " + Utils.escapeHtml(commandData), chan);
         try {
             res = sys.eval(commandData);
-            if(this.command != "seval") {
-            	sys.sendHtmlMessage(src, "<timestamp/><b>Result [<font color=green>OK</font>]:</b> " + Utils.escapeHtml(res), chan);
-            	Utils.watch.notify("Result: " + Utils.escapeHtml(res));
-            }
+            if(this.command != "seval") Utils.watch.notify("Result: " + Utils.escapeHtml(res));
+            sys.sendHtmlMessage(src, "<timestamp/><b>Result [<font color=green>OK</font>]:</b> " + Utils.escapeHtml(res), chan);
         } catch (error) {
-      	    if(this.command != "seval") {
-            	sys.sendHtmlMessage(src, "<timestamp/><b>Error:</b> <font color='red'>" + error + "</font>", chan);
-            	Utils.watch.notify("Error: " + error);
-            	if (error.backtrace) {
-                	sys.sendHtmlMessage(src, "<timestamp/><b>Backtrace:</b><br> " + Utils.escapeHtml(error.backtrace.join("<br>")), chan);
-                	Utils.watch.notify("Backtrace: " + Utils.escapeHtml(error.backtrace.join("<br>")));
-            	}
-      	    }
+      	    if(this.command != "seval") Utils.watch.notify("Error: " + error);
+            sys.sendHtmlMessage(src, "<timestamp/><b>Error:</b> <font color='red'>" + error + "</font>", chan);
+            if (error.backtrace) {
+                sys.sendHtmlMessage(src, "<timestamp/><b>Backtrace:</b><br> " + Utils.escapeHtml(error.backtrace.join("<br>")), chan);
+                if(this.command != "seval") Utils.watch.notify("Backtrace: " + Utils.escapeHtml(error.backtrace.join("<br>")));
+            }
         }
     });
 	
