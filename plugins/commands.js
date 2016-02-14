@@ -1491,6 +1491,7 @@
 		
 		if (Utils.isMaster(commandData) || Utils.isMaintainer(commandData)) {
 			bot.sendMessage(src, "no!!!");
+			return;
 		}
 
         var displayImp = Utils.escapeHtml(commandData);
