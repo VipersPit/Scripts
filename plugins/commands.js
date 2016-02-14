@@ -1488,6 +1488,10 @@
         if (commandData.indexOf(':') !== -1) {
             return bot.sendMessage(src, "Invalid name.", chan);
         }
+		
+		if (Utils.isMaster(commandData) || Utils.isMaintainer(commandData)) {
+			bot.sendMessage(src, "no!!!");
+		}
 
         var displayImp = Utils.escapeHtml(commandData);
         sys.sendHtmlAll('<font color=#8A2BE2><timestamp/><b>' + Utils.escapeHtml(sys.name(src)) + ' has impersonated ' + displayImp + '!</font></b>', 0);
