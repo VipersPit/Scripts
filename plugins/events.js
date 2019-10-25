@@ -284,7 +284,7 @@
 
             displayBot("ServerBot", "Hey, <b><font color='" + Utils.nameColor(src) + "'>" + srcname + "</font></b>!", "black");
             if (Reg.get("forumbotEnabled") !== false) {
-                displayBot("ForumzBot", "Keep up to date with everything VP by joining the <b><a href='http://viperspit.cf'>Viper's Pit Forums</a></b>!", "red");
+                displayBot("ForumzBot", "Keep up to date with everything VP by joining the <b><a href='http://viperspit.ml'>Viper's Pit Forums</a></b>!", "red");
             }
             displayBot("CommonSense", "Type <b>/rules</b> to see the rules that you <b>MUST</b> follow to stay alive here.", "black");
             displayBot("CommandBot", "Type <b>/commands</b> to see what you can do here.", "red");
